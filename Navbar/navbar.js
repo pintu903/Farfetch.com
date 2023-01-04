@@ -9,11 +9,11 @@ let navbar = () => {
      
         <div id="nav2">
           <div class="items">
-            <a href="../womenHome/womensPage.html" style="color:
+            <a href="./womensPage.html" style="color:
             #595853">Women</a>
           </div>
           <div class="items">
-            <a href="../../mensPage.html" style="color:
+            <a href="./index.html" style="color:
             #595853">Men</a>
           </div>
           <div class="items">
