@@ -17,7 +17,7 @@ Have a look ⬇️
 
 **Client:** HTML, CSS, JavaScript
 
-**Deploying:** Netlify
+**Deploying:**[ Netlify](https://e-farfetch.netlify.app/)
 
 
 
