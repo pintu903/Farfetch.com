@@ -87,9 +87,7 @@
   height: 70px;
   width: 77%;
   font-size: 99%;
-
   display: flex;
-
   align-items: left;
   text-decoration: none;
 }
@@ -129,9 +127,6 @@
   z-index: 10;
   background-color: white;
 }
-/* .items>a{
-            text-decoration: none;
-        } */
 
 .nav-screen-parentContainer {
   display: grid;
@@ -155,9 +150,7 @@
 }
 
 #navbar {
-  /* position: sticky; */
   top: 0;
-  /* position: fixed; */
 }
 #sticky {
   background-color: white;

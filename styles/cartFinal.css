@@ -1,0 +1,171 @@
+.wrapper {
+  width: 95%;
+  height: 360px;
+  margin: auto;
+  display: flex;
+  gap: 20px;
+}
+
+figure {
+  width: 32%;
+  float: left;
+  margin: 0;
+}
+figcaption {
+  text-align: center;
+}
+.hover-animation {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin: 10% auto;
+
+  /* box-shadow: 5px 5px 15px rgba(0,0,0,0.6); */
+}
+.hover-animation img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+}
+.hover-animation img.img-front:hover {
+  opacity: 0;
+  cursor: pointer;
+}
+/* recomendation ended */
+#static_detail {
+  width: 23%;
+  display: flex;
+  justify-content: space-between;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 20px;
+}
+#prodesc {
+  display: flex;
+  justify-content: space-between;
+}
+#prodesc > div {
+  padding: 0px 10px 0px 20px;
+  width: 31%;
+}
+#imgDesc > img {
+  width: 100%;
+}
+
+#recommendation {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+#heading {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#main {
+  height: auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.item::-webkit-scrollbar {
+  display: none;
+}
+#summary {
+  width: 20%;
+  /* border: 2px solid cyan; */
+}
+.cash {
+  display: flex;
+  justify-content: space-between;
+}
+#checkout {
+  background-color: black;
+  color: white;
+  height: 40px;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.cash {
+  margin-top: 10px;
+  height: 30px;
+  /* background-color: red; */
+}
+#rec {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+  margin-top: 100px;
+}
+#shop {
+  background-color: white;
+  color: #000;
+  height: 30px;
+  width: 100px;
+  border-radius: 7.5px;
+  display: block;
+  margin: auto 0;
+  border: 1px solid;
+  font-weight: bold;
+}
+
+.item {
+  height: auto;
+  width: 70%;
+  /* overflow: scroll; */
+  /* border: 2px solid green; */
+}
+.item > div {
+  height: auto;
+  /* width: 9%; */
+  display: flex;
+  border-bottom: 1px solid grey;
+}
+.image {
+  display: block;
+  margin: auto;
+  width: 70%;
+}
+.item > div > div {
+  width: 100%;
+  /* border: 3px solid cyan; */
+}
+.specification {
+  align-self: center;
+}
+.specification > h3,
+.price > h4 {
+  text-align: center;
+}
+.specification > p,
+.price > p {
+  text-align: center;
+  margin-top: 20px;
+}
+.price {
+  align-self: center;
+}
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-left: 90%;
+  cursor: pointer;
+}
+.wish {
+  margin-top: 30px;
+}
+.btn {
+  width: 20px;
+  cursor: pointer;
+}
+
+#totalPrice {
+  height: 30px;
+  /* border: 2px solid red; */
+}

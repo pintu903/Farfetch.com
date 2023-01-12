@@ -68,7 +68,7 @@ function goToCart(data) {
   let arr = JSON.parse(localStorage.getItem("itemData")) || [];
   arr.push(data);
   localStorage.setItem("itemData", JSON.stringify(arr));
-  window.location.href = "./cart-page/cart.html";
+  window.location.href = "./cart2.html";
 }
 function displayDiscription(data) {
   let bottom_div = document.createElement("div");

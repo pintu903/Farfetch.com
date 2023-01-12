@@ -1,0 +1,133 @@
+<div class="modal">
+      <div class="tab-form">
+      close
+        <div style="margin-bottom: 20px">
+          <div class="close">+</div>
+        </div>
+        <div class="tab-header">
+          <div class="active">SIGN IN</div>
+          <div>I'M NEW HERE</div>
+        </div>
+        <div class="tab-body">
+          <div class="login active">
+            <div class="form-input">
+              <label for="loginemail">Email address</label>
+              <input id="loginemail" type="text" />
+            </div>
+            <div class="form-input">
+              <label for="loginpass">Password</label>
+              <input id="loginpass" type="password" />
+            </div>
+            <p style="font-size: 14px">☑ Keep me signed in.</p>
+            <div class="form-input">
+              <button id="login">Sign In</button>
+            </div>
+          </div>
+          <div class="signup">
+            <div class="form-input">
+              <label for="">Name</label>
+              <input type="text" placeholder="Enter username" />
+            </div>
+            <div class="form-input">
+              <label for="">Email address</label>
+              <input type="email" id="signupemail" placeholder="Enter email" />
+            </div>
+            <div class="form-input">
+              <label for="">Password</label>
+              <input
+                type="password"
+                id="signuppass"
+                placeholder="Enter password"
+              />
+            </div>
+            <p style="font-size: 14px">
+              By registering, you agree with our Terms & Conditions and Privacy
+              and Cookie Policy.
+            </p>
+            <div class="form-input">
+              <button id="signup">Register</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+
+
+
+
+
+
+
+
+
+
+    <script>
+  let tab = document.querySelector(".tab-form");
+  let tabHeader = document.querySelector(".tab-header");
+  let tabHeaderElements = tab.querySelectorAll(".tab-header > div");
+  let tabBody = tab.querySelector(".tab-body");
+  let tabBodyElements = tab.querySelectorAll(".tab-body > div");
+
+  console.log(tabBodyElements);
+
+  /*----login tab----*/
+  console.log(tabHeaderElements);
+  let login = tabHeaderElements[1];
+  login.addEventListener("click", function () {
+    tabBodyElements[1].classList.add("active");
+    tabBodyElements[0].classList.remove("active");
+    tabHeaderElements[1].classList.add("active");
+    tabHeaderElements[0].classList.remove("active");
+  });
+
+  /*----Signup tab----*/
+
+  let signup = tabHeaderElements[0];
+  signup.addEventListener("click", function () {
+    tabBodyElements[0].classList.add("active");
+    tabBodyElements[1].classList.remove("active");
+    tabHeaderElements[0].classList.add("active");
+    tabHeaderElements[1].classList.remove("active");
+  });
+
+  /*----Login functionality-----*/
+
+  let signupbtn = document.querySelector("#signup");
+  signupbtn.addEventListener("click", function () {
+    let email = document.querySelector("#signupemail").value;
+    let pass = document.querySelector("#signuppass").value;
+    let obj = {
+      email: email,
+      pass: pass,
+    };
+    localStorage.setItem("userData", JSON.stringify(obj));
+    alert("Signup Successful!");
+  });
+
+  /*----Login functionality-----*/
+
+  let loginbtn = document.querySelector("#login");
+  loginbtn.addEventListener("click", function () {
+    let obj = JSON.parse(localStorage.getItem("userData"));
+    let email = document.querySelector("#loginemail").value;
+    let pass = document.querySelector("#loginpass").value;
+    if (obj == null) alert("User does not Exist⛔");
+    else if (email != obj.email) alert("User does not Exist⛔");
+    else if (pass != obj.pass) alert("Wrong Credentials❌");
+    else {
+      alert("Login Successful😀");
+      document.location.href = "../address.html";
+    }
+  });
+
+  /*-----Checkout functionality-----*/
+
+  document.querySelector("#checkout").addEventListener("click", function () {
+    document.querySelector(".modal").style.display = "flex";
+  });
+
+  /*------close functionality-----*/
+  document.querySelector(".close").addEventListener("click", function () {
+    document.querySelector(".modal").style.display = "none";
+  });
+</script>

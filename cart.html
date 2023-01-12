@@ -4,13 +4,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cart section</title>
-    <link rel="stylesheet" href="./styles/cart.css" />
-    <link rel="stylesheet" href="./Navbar/navbar.css">
-    <link rel="stylesheet" href=".../footer/fw17_0093foot.css" />
-     <!-- men.css -->
-     <link rel="stylesheet" href="/styles/women.css">
-
-    <style>
+    <link rel="stylesheet" href="./styles/cart2.css" />
+    <link rel="stylesheet" href="./Navbar/navbar.css" />
+    <!-- <link rel="stylesheet" href="./styles/cart.css" />
+    <link rel="stylesheet" href="/styles/women.css" /> -->
+    <!-- <link rel="stylesheet" href="./sigup-and-login/SignUp_and_LogIn.css"> -->
+    <!-- <link rel="stylesheet" href=".../footer/fw17_0093foot.css" /> -->
+    <!-- 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/ac04af6655.js"
+      crossorigin="anonymous"
+    ></script> -->
+    <!-- <style>
       * {
         box-sizing: border-box;
       }
@@ -132,73 +147,19 @@
         transform: rotate(45deg);
         cursor: pointer;
       }
-    </style>
+    </style>  -->
   </head>
 
   <body>
     <!--Navbar-->
-    <div id="navbar">
-      <!-- <a href="../index.html"> <img src="cart-page/image.png" alt="" /></a> -->
-    </div>
+    <div id="navbar"></div>
 
     <!-- signup and login pop up -->
-    <div class="modal">
-      <div class="tab-form">
-        <!--close-->
-        <div style="margin-bottom: 20px">
-          <div class="close">+</div>
-        </div>
-        <div class="tab-header">
-          <div class="active">SIGN IN</div>
-          <div>I'M NEW HERE</div>
-        </div>
-        <div class="tab-body">
-          <div class="login active">
-            <div class="form-input">
-              <label for="">Email address</label>
-              <input id="loginemail" type="text" />
-            </div>
-            <div class="form-input">
-              <label for="">Password</label>
-              <input id="loginpass" type="password" />
-            </div>
-            <p style="font-size: 14px">☑ Keep me signed in.</p>
-            <div class="form-input">
-              <button id="login">Sign In</button>
-            </div>
-          </div>
-          <div class="signup">
-            <div class="form-input">
-              <label for="">Name</label>
-              <input type="text" placeholder="Enter username" />
-            </div>
-            <div class="form-input">
-              <label for="">Email address</label>
-              <input type="email" id="signupemail" placeholder="Enter email" />
-            </div>
-            <div class="form-input">
-              <label for="">Password</label>
-              <input
-                type="password"
-                id="signuppass"
-                placeholder="Enter password"
-              />
-            </div>
-            <p style="font-size: 14px">
-              By registering, you agree with our Terms & Conditions and Privacy
-              and Cookie Policy.
-            </p>
-            <div class="form-input">
-              <button id="signup">Register</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <!--cart page body-->
 
     <p id="heading">SHOPPING BAG</p>
+
     <div id="main">
       <div class="items">
         <table>
@@ -337,89 +298,15 @@
     <div id="footer"></div>
   </body>
 </html>
-<script src="cart.js" type="module"></script>
-<!-- <script src="cart2.js"></script> -->
-<script src=".../footer/fw17_0093foot.js"></script>
 
-<!--Signup and login js-->
-
-<script>
-  let tab = document.querySelector(".tab-form");
-  let tabHeader = document.querySelector(".tab-header");
-  let tabHeaderElements = tab.querySelectorAll(".tab-header > div");
-  let tabBody = tab.querySelector(".tab-body");
-  let tabBodyElements = tab.querySelectorAll(".tab-body > div");
-
-  console.log(tabBodyElements);
-
-  /*----login tab----*/
-  console.log(tabHeaderElements);
-  let login = tabHeaderElements[1];
-  login.addEventListener("click", function () {
-    tabBodyElements[1].classList.add("active");
-    tabBodyElements[0].classList.remove("active");
-    tabHeaderElements[1].classList.add("active");
-    tabHeaderElements[0].classList.remove("active");
-  });
-
-  /*----Signup tab----*/
-
-  let signup = tabHeaderElements[0];
-  signup.addEventListener("click", function () {
-    tabBodyElements[0].classList.add("active");
-    tabBodyElements[1].classList.remove("active");
-    tabHeaderElements[0].classList.add("active");
-    tabHeaderElements[1].classList.remove("active");
-  });
-
-  /*----Login functionality-----*/
-
-  let signupbtn = document.querySelector("#signup");
-  signupbtn.addEventListener("click", function () {
-    let email = document.querySelector("#signupemail").value;
-    let pass = document.querySelector("#signuppass").value;
-    let obj = {
-      email: email,
-      pass: pass,
-    };
-    localStorage.setItem("userData", JSON.stringify(obj));
-    alert("Signup Successful!");
-  });
-
-  /*----Login functionality-----*/
-
-  let loginbtn = document.querySelector("#login");
-  loginbtn.addEventListener("click", function () {
-    let obj = JSON.parse(localStorage.getItem("userData"));
-    let email = document.querySelector("#loginemail").value;
-    let pass = document.querySelector("#loginpass").value;
-    if (obj == null) alert("User does not Exist⛔");
-    else if (email != obj.email) alert("User does not Exist⛔");
-    else if (pass != obj.pass) alert("Wrong Credentials❌");
-    else {
-      alert("Login Successful😀");
-      document.location.href = "../address.html";
-    }
-  });
-
-  /*-----Checkout functionality-----*/
-
-  document.querySelector("#checkout").addEventListener("click", function () {
-    document.querySelector(".modal").style.display = "flex";
-  });
-
-  /*------close functionality-----*/
-  document.querySelector(".close").addEventListener("click", function () {
-    document.querySelector(".modal").style.display = "none";
-  });
-</script>
-
-<script type="module">
-  import footer from ".../footer/fw17_0093foot.js";
-  document.querySelector("#footer").innerHTML = footer();
-</script>
 <!-- navbar -->
 <script type="module">
-    import navbar from "./navbar/navbar.js";
-    document.querySelector("#navbar").innerHTML = navbar();
-  </script>
+  import navbar from "./Navbar/navbar.js";
+  document.querySelector("#navbar").innerHTML = navbar();
+</script>
+
+<script src="./cart-page/cart.js" type="module"></script>
+<script src="./cart-page/cart2.js"></script>
+<script src=".../footer/fw17_0093foot.js"></script>
+
+<!-- Signup and login js -->

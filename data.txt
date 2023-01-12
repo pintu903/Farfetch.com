@@ -1,50 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./Navbar/navbar.css" />
-    <link rel="stylesheet" href="./styles/cartFinal.css" />
-
-    <title>Cart</title>
-  </head>
-  <body>
-    <div id="navbar"></div>
-
-    <!--cart page body-->
-
-    <p id="heading">SHOPPING BAG</p>
-
-    <div id="main">
-      <div class="item">
-        <hr />
-      </div>
-
-      <div id="summary">
-        <h3>Summary</h3>
-        <div class="cash">
-          <p>Subtotal</p>
-          <div>
-            <!-- <p>$&nbsp;</p> -->
-            <p id="totalprice"></p>
-          </div>
-        </div>
-        <div class="cash">
-          <p>Delivery</p>
-          <p id="delivery">$ 600</p>
-        </div>
-        <hr />
-        <div class="cash">
-          <p>Total</p>
-          <p id="totalcash"></p>
-        </div>
-        <button id="checkout">Go To Checkout</button>
-      </div>
-    </div>
-
-    <!-- Recommandation section -->
-    <div id="rec">
+  <div id="rec">
       <p id="recommendation">Recommandation</p>
       <button id="shop">Shop Now</button>
     </div>
@@ -147,14 +101,3 @@
         </figcaption>
       </figure>
     </div>
-  </body>
-</html>
-
-<!-- navbar -->
-<script type="module">
-  import navbar from "./Navbar/navbar.js";
-  document.querySelector("#navbar").innerHTML = navbar();
-</script>
-
-<script src="./cart-page/cart.js" type="module"></script>
-<script src="./cart-page/cart2.js"></script>
